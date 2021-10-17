@@ -22,14 +22,14 @@ namespace Zoo.Controllers
         [Route("{id}")]
         public ActionResult<ZookeeperResponseModel> Get(int id)
         {
-            //try
-            //{
+            try
+            {
                 return _zookeeper.GetZookeeperById(id);
-            //}
-            //catch (InvalidOperationException)
-            //{
-            //    return NotFound();
-            //}
+            }
+            catch (InvalidOperationException)
+            {
+                return NotFound();
+            }
 
         }
 
