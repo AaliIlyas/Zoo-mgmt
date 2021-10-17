@@ -28,8 +28,6 @@ namespace Zoo.Services
         {
             var zookeeperDbModel = _context.Zookeeper.FromSqlRaw($@"Exec GetZookeepers").Single(z => z.Id == id);
 
-            //var query = zookeeperQuery.ToQueryString();
-
             //var zookeeperDbModel = zookeeperQuery.Single(z => z.Id == id);
 
             return new ZookeeperResponseModel(zookeeperDbModel, true);
